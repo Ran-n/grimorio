@@ -1,0 +1,14 @@
+---
+name: version-bump-workflow
+description: "User bumps the version in pyproject.toml; only then promote [Unreleased] to that version in CHANGELOG"
+metadata: 
+  node_type: memory
+  type: feedback
+  originSessionId: f85d774d-8958-4367-ae9f-6a697fc01777
+---
+
+Never bump `version` in `pyproject.toml` proactively. The user updates the version themselves, then asks to update the changelog. At that point, read the new version from `pyproject.toml` and promote `[Unreleased]` to `[X.Y.Z] - YYYY-MM-DD`.
+
+**Why:** User controls release versioning; Claude touching it jumped ahead of their process.
+
+**How to apply:** When asked to "update the changelog" or "set the versions", read `pyproject.toml` first, use whatever version is there, and only touch `CHANGELOG.md` — never `pyproject.toml`.

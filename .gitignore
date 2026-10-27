@@ -1,0 +1,61 @@
+# Whitelist: ignore everything, then opt in what is portable and secret-free.
+*
+!.gitignore
+!CLAUDE.md
+!README.md
+!CHANGELOG.md
+!CONTRIBUTING.md
+!CONTRIBUTORS
+!LICENSE
+!TODO.md
+!settings.json
+
+!agents/
+!agents/**
+!commands/
+!commands/**
+!hooks/
+!hooks/**
+!skills/
+!skills/**
+# synced from claude.ai, not authored here
+skills/synced/
+
+!bin/
+!bin/**
+
+!memory/
+!memory/**
+
+!.gitattributes
+
+# per-project memories under neutral names; projects/ (path-named folders, transcripts) stays local and
+# links its */memory folders here (bin/setup.py)
+!project-memory/
+!project-memory/**
+# stale copies of the old header script
+project-memory/*/*.py
+
+# secret memories: the plaintext stays local, its GPG-encrypted copy is tracked (bin/secrets.py seal)
+memory/*token*
+memory/*secret*
+memory/*credential*
+memory/*password*
+memory/*_keys*
+memory/*private*
+project-memory/*/*token*
+project-memory/*/*secret*
+project-memory/*/*credential*
+project-memory/*/*password*
+project-memory/*/*_keys*
+project-memory/*/*private*
+# personal: family names and contact details; other people's names and Discord IDs
+project-memory/arbore/project_arbore.md
+project-memory/ai-optcg-discord-team/roster_discord_handles.md
+!*.gpg
+# named like secrets but aren't
+!reference_ssh_keys.md
+!feedback_tokens.md
+
+# python bytecode from running hooks
+__pycache__/

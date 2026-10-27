@@ -1,0 +1,15 @@
+---
+name: Regression safety — no unintended side effects
+description: Changes must not silently break unrelated parts of the program; flag ripple risks before implementing
+type: feedback
+originSessionId: a9faf96a-074c-4209-a524-30e5f7027481
+---
+When making a change, ensure it does not silently break unrelated parts of the program. Intentional behaviour changes requested by the user are always correct — this rule is only about unintended ripple effects.
+
+**Why:** changes in shared abstractions, utilities, or interfaces can silently break unrelated call sites.
+
+**How to apply:**
+- Before editing any shared module, grep all files that import or reference it.
+- If touching a shared interface, signal, or schema: verify all call sites are still correct after the change.
+- If an unintended side effect risk exists, name it before proceeding.
+- Never remove, rename, or change a function/class signature without updating every caller.

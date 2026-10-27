@@ -1,0 +1,6 @@
+# Every text file goes through the grimorio filter (bin/filter.py, registered by bin/setup.py): the profile folder
+# name is stored as a placeholder and `<!-- private -->` blocks are stored GPG-encrypted.
+* filter=grimorio
+*.gpg -filter binary
+# holds the literal placeholder and markers it replaces
+bin/filter.py -filter

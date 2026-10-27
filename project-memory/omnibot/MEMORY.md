@@ -1,0 +1,18 @@
+- [OmniBot naming convention](feedback_omnibot_naming.md) — categories use `NAME [Ω]`, channels use `name-ω`; all bot-managed Discord resources must follow this
+- [Central verification server](reference_central_verification_server.md) — it's a real Discord server named "Omni Bot", bot already joined
+- [Docpush workflow](feedback_push_all_remotes.md) — "docpush" = update all doc files → commit → push to origin, gitlab, and codeberg
+- [Docpush scope for doc edits](feedback_push_doc_scope.md) — "docpush" = push omnibot remotes only; never commit/push the doc git repo unless explicitly asked
+- [No patch scripts](feedback_no_scripts.md) — execute Discord/DB operations directly, don't leave script files behind
+- [DB as source of truth](feedback_db_source_of_truth.md) — DB is canonical for all state: configurable lists in `command_choices`, runtime state (membership, flags) in proper normalized columns; never use in-memory cache as source of truth
+- [Use metadatos tool for doc edits](feedback_use_metadatos_tool.md) — after editing any file in `doc/`, run `python main.py -m` from `d:\Users\{USER}\sw\metadatos` to update the Revised timestamp
+- [No uncommissioned commits](feedback_no_uncommissioned_commits.md) — never commit or push without an explicit instruction; "yes" / "everything yes" is not enough
+- [Bot reply default pattern](feedback_bot_responses_not_ephemeral.md) — all replies use `replyEphemeral` (ephemeral + auto-delete) unless the handler explicitly uses a different pattern
+- [Module system quirks](project_module_quirks.md) — Verification is global-only; guild-toggleable vs global-only modules have different registration paths across config/oconfig
+- [Document system intent](feedback_document_system_intent.md) — save user explanations of how the system should work to memory; consult memory before editing code in that area
+- [Atomic permissions](feedback_atomic_permissions.md) — each permission is purpose-specific; never reuse an existing perm to gate unrelated features; always add a new string + migration
+- [Full sweep trigger](feedback_full_sweep.md) — "full sweep" = autonomous repeating audit-and-fix loop across all levels; don't return control until nothing remains
+- [Module disable behavior](feedback_module_disable_behavior.md) — disabling a module leaves its Discord channels/categories intact; never delete them on disable
+- [Module channel recreation](feedback_module_channel_recreation.md) — if a module's channels/categories are manually deleted, bot recreates them automatically (startup + channelDelete event)
+- [No silent failure](feedback_no_silent_failure.md) — always surface errors explicitly; never swallow exceptions, empty catch blocks, or silent promise rejections
+- [Default channel topic](feedback_channel_default_topic.md) — every bot-created channel must include a meaningful topic/description; never create a channel without one
+- [No co-author trailers](feedback_no_coauthor.md) — never add `Co-Authored-By:` to any commit message; hook enforces this

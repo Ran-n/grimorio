@@ -1,0 +1,61 @@
+# Global Preferences
+
+## Releases
+When editing, resigning, amending, or modifying old commits, tags, or releases in any way, preserve ALL original metadata: author date, committer date, tag date, tagger identity, and message. Use `GIT_AUTHOR_DATE`/`GIT_COMMITTER_DATE` for commits; recreate tag objects with original date/tagger. Goal: history ordering and timestamps look unchanged.
+
+## Commits
+- Never add co-author lines (no `Co-Authored-By`). All commits are solely the user's.
+- Commit style: bracket abbreviation as title (do NOT repeat the type word in the title), Conventional Commits in the body.
+- Allowed brackets — use only these, never invent others:
+  - `[A]` → `feat`
+  - `[R]` → `refactor`
+  - `[F]` → `fix`
+  - `[D]` → `docs`
+  - `[T]` → `test`
+  - `[C]` → `chore`
+  - `[P]` → `perf`
+  - `[B]` → `build`
+  - `[S]` → `style`
+- Breaking changes: use `feat!`/`fix!` in body, or footer `BREAKING CHANGE: <description>`
+- Scope is optional: `fix(proxy): ...`
+- Body lines are lowercase, imperative mood
+- Example:
+  ```
+  [R] Proxy→ProxyClient, ProxyDTO→Proxy
+
+  refactor: split into proxy.py / proxy_client.py
+  fix: refresh_header now guarantees a different value
+  ```
+
+## File Headers
+Use `python C:/Users/{USER}/.claude/memory/metadatos_v0.2.1.py <flag> <file>`.
+Source: https://github.com/ran-n/metadatos — update the copy when the version changes.
+
+- On every file edit, run with `-m` to update the `Revised:` timestamp
+- If a file has no metadata header, run with `-c` to create one
+- If asked to view metadata, run with `-v`
+- Supported types: `.py`, `.pyw`, `.sh`, `.bash`, `.rs`, `.md` — for any other type, skip and inform the user
+
+## Workflow
+- When auto-approve mode is on, execute all commands and edits immediately without asking for confirmation.
+- Never commit unless the user explicitly asks. Prepare the commit message if relevant, but do not run `git commit`.
+
+## Author
+- Name: Ran#
+- Email: ran.hash@proton.me
+
+## Feedback
+- Always keep docs in sync with code: update docstrings, inline comments, and all README variants (every language version) as part of every code change. Treat it as part of the task, not a separate step. **Why:** stale field names lingered in READMEs after a rename.
+- Use the fewest tokens possible without compromising result quality. Lead with the answer, skip preamble, hypotheses, trailing summaries, and filler.
+- Always implement industry-standard behavior by default. If a request deviates from standard: do it, but first name the standard and flag the deviation so the user can decide.
+
+## Workflow Feedback
+- [Push means commit then push](feedback_push.md) — "push changes" = commit all pending + push, no confirmation needed
+
+## References
+- [Custom License](reference_license.md) — PayBack License (PBL) v1.0 at `d:/Users/{USER}/sw/doc/LICENSE`
+
+## Python Projects
+- If `pyproject.toml` contains ruff configuration: run `ruff format <file>` on every modified Python file, then run `ruff check <file>` and fix any reported errors manually in the code until it passes clean. Do not use `--fix` as a shortcut — write correct code. Use the config from `pyproject.toml`.
+
+- [Full sweep trigger](feedback_full_sweep.md) � "full sweep" = autonomous repeating audit-and-fix loop across all levels; don't return control until nothing remains
