@@ -1,7 +1,7 @@
 [//]: # ( ---------------------------------------------------------------------- )
 [//]: # (+ Authors: 	Ran# <ran.hash@proton.me> )
 [//]: # (+ Created: 	2026/10/27 16:48:57.000106 )
-[//]: # (+ Revised: 	2026/10/28 15:08:09.415859 )
+[//]: # (+ Revised: 	2026/10/28 15:58:38.139582 )
 [//]: # ( ---------------------------------------------------------------------- )
 
 # Changelog
@@ -32,6 +32,8 @@ All notable changes to this project are documented here.
 - Whitelist `.gitignore`, README, CONTRIBUTING, CHANGELOG, CONTRIBUTORS and PayBack License (PBL)
 
 ### Changed
+- `feedback_version_bump` memory works for every project: version written with uv, cargo, npm or the ecosystem's own tool, repos without a manifest versioned by CHANGELOG plus a `vX.Y.Z` tag, release test gate covers Rust ignored/feature-gated tests and extra npm test scripts
+- `/dbp` bump step no longer assumes `uv version`
 - README rewritten shorter: merged the never-tracked and secrets sections, simplified install steps and tables, listed the `memory_inject.py` hook
 - `feedback_apply_global_memory_proactively` memory: open each matching memory file, never act on its index line alone
 - `feedback_file_headers` memory (global and bounty-board): direct `metadata.ps1` path when it's not on PATH, and merging an existing module docstring after `-c`

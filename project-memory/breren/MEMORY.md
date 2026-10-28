@@ -15,7 +15,7 @@
 - [Push semantics](feedback_push.md) — never commit/push unless explicitly asked; when asked, do both: stage → commit → push
 - [Push workflow](feedback_push_all_remotes.md) — "push" = update all doc files → commit → push to `github`, `gitlab`, `codeberg`; Bitbucket dropped 2026-05; create missing remote if needed; SSH only
 - [CHANGELOG before committing](feedback_changelog.md) — update CHANGELOG.md in the same commit as the changes; only when a commit is requested
-- [Version bump workflow](feedback_version_bump.md) — "bump" = infer level from git diff, run `uv version --bump <level>`, promote CHANGELOG [Unreleased]; run every deselected pytest marker (live, desktop…) first
+- [Version bump workflow](feedback_version_bump.md) — "bump" = infer level from git diff, run every skipped test group first, write the version with the project's tool (uv, cargo, npm…), promote CHANGELOG [Unreleased]; no manifest → git tag
 - [Release dist attachments](feedback_releases.md) — build all dist formats (.exe, .whl, .tar.gz) and attach to tag; preserve original timestamps on history rewrites
 
 ## Python Projects
