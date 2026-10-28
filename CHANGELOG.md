@@ -1,7 +1,7 @@
 [//]: # ( ---------------------------------------------------------------------- )
 [//]: # (+ Authors: 	Ran# <ran.hash@proton.me> )
 [//]: # (+ Created: 	2026/10/27 16:48:57.000106 )
-[//]: # (+ Revised: 	2026/10/28 15:58:38.139582 )
+[//]: # (+ Revised: 	2026/10/28 15:58:49.015374 )
 [//]: # ( ---------------------------------------------------------------------- )
 
 # Changelog
@@ -11,6 +11,10 @@ All notable changes to this project are documented here.
 ---
 
 ## [Unreleased]
+
+---
+
+## [0.1.0] - 2026-10-28
 
 ### Added
 - Global `CLAUDE.md` with plain-text `todo` triggers
