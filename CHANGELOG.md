@@ -1,7 +1,7 @@
 [//]: # ( ---------------------------------------------------------------------- )
 [//]: # (+ Authors: 	Ran# <ran.hash@proton.me> )
 [//]: # (+ Created: 	2026/10/27 16:48:57.000106 )
-[//]: # (+ Revised: 	2026/10/27 19:10:25.363935 )
+[//]: # (+ Revised: 	2026/10/28 14:26:06.146999 )
 [//]: # ( ---------------------------------------------------------------------- )
 
 # Changelog
@@ -19,6 +19,8 @@ All notable changes to this project are documented here.
 - `/dbp`, `/hk` and `/todo` slash commands
 - `git_guard.py` hook: author, bracket commit title, no Co-Authored-By in any `-m`, `-F -` heredoc messages, raw secrets in staged lines, unsealed secret memories; refuses the command instead of ending Claude's turn
 - `changelog_check.py` hook: refuses commits without `CHANGELOG.md`, in the repo targeted by `git -C` or a preceding `cd`
+- `memory_inject.py` UserPromptSubmit hook: injects the full text of the memory files whose topic the prompt matches
+- `feedback_gap_free` memory (global and bounty-board): audit and fix every path a change touches before reporting it done
 - `statusline.ps1` status line spinner
 - Global memory store with `MEMORY.md` index
 - Per-project memories under plain project names in `project-memory/`, linked from Claude's path-named `projects/…/memory` folders with junctions (`links.json`)
@@ -28,3 +30,8 @@ All notable changes to this project are documented here.
 - `metadata` header tool in `bin/`, whose `-v`/`-d` only touch the Authors/Created/Revised fields
 - `feedback_gpg_sealing` memory on credentials files and private markers
 - Whitelist `.gitignore`, README, CONTRIBUTING, CHANGELOG, CONTRIBUTORS and PayBack License (PBL)
+
+### Changed
+- `feedback_apply_global_memory_proactively` memory: open each matching memory file, never act on its index line alone
+- `feedback_file_headers` memory (global and bounty-board): direct `metadata.ps1` path when it's not on PATH, and merging an existing module docstring after `-c`
+- `.gitignore` ignores hook logs

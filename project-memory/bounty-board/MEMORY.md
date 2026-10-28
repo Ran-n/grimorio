@@ -53,6 +53,7 @@
 - [TODO backlog trigger](feedback_todo_trigger.md) — "todo: …" or /todo … = add a self-contained item to TODO.md (creates it if missing); "do todo N" = implement it, then delete it
 
 ## Code Quality
+- [Gap-free implementation](feedback_gap_free.md) — audit every path a change touches and fix every gap before reporting done; never leave a gaps list for the user
 - [Database BCNF requirement](feedback_database_bcnf.md) â€” every relational schema must be real BCNF, not just informally "normalized"; check candidate-key dependencies, document exceptions
 - [No silent failure](feedback_no_silent_failure.md) â€” always surface errors explicitly; never swallow exceptions, empty catch blocks, or silent promise rejections
 - [Clean Code, SOLID + Design Patterns](feedback_clean_code.md) â€” all SOLID rules, all GoF patterns, DRY/YAGNI/KISS, DDD/CQRS/hexagonal when scale justifies; DRY is a hard rule â€” never invoke "no premature abstraction"/YAGNI to skip extracting shared code

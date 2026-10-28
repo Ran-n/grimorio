@@ -57,5 +57,6 @@ project-memory/ai-optcg-discord-team/roster_discord_handles.md
 !reference_ssh_keys.md
 !feedback_tokens.md
 
-# python bytecode from running hooks
+# python bytecode and logs from running hooks
 __pycache__/
+hooks/*.log
