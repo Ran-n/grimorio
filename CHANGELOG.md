@@ -1,7 +1,7 @@
 [//]: # ( ---------------------------------------------------------------------- )
 [//]: # (+ Authors: 	Ran# <ran.hash@proton.me> )
 [//]: # (+ Created: 	2026/10/27 16:48:57.000106 )
-[//]: # (+ Revised: 	2026/10/28 14:26:06.146999 )
+[//]: # (+ Revised: 	2026/10/28 15:08:09.415859 )
 [//]: # ( ---------------------------------------------------------------------- )
 
 # Changelog
@@ -32,6 +32,7 @@ All notable changes to this project are documented here.
 - Whitelist `.gitignore`, README, CONTRIBUTING, CHANGELOG, CONTRIBUTORS and PayBack License (PBL)
 
 ### Changed
+- README rewritten shorter: merged the never-tracked and secrets sections, simplified install steps and tables, listed the `memory_inject.py` hook
 - `feedback_apply_global_memory_proactively` memory: open each matching memory file, never act on its index line alone
 - `feedback_file_headers` memory (global and bounty-board): direct `metadata.ps1` path when it's not on PATH, and merging an existing module docstring after `-c`
 - `.gitignore` ignores hook logs
